@@ -1,2 +1,2 @@
 # Echo
-Just vibing
+Just vibe coding
