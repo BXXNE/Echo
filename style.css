@@ -1,19 +1,29 @@
+/* General styles */
 body {
   margin: 0;
+  background-color: #0a0a0a;
   font-family: 'Courier New', monospace;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #ff00cc 100%);
-  color: #f0f0f0;
-  transition: background 0.4s, color 0.4s;
-  min-height: 100vh;
+  color: #00ffff;
+  overflow: hidden;
 }
 
-.hero {
-  text-align: center;
-  padding: 60px 5vw;
-  background: transparent;
+/* Echo container */
+.echo-container {
   position: relative;
-  overflow: hidden;
-}.echo-eyelids {
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+/* Echo layers */
+.echo-face {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.echo-eyelids {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,20 +33,39 @@ body {
   animation: blink 6s infinite;
 }
 
-@keyframes blink {
-  0%, 97%, 100% { opacity: 0; }
-  48%, 50% { opacity: 1; }
-}.echo-breath {
+.echo-breath {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
-  opacity: 0.6;
-  animation: breathe 4s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.4;
+  animation: breathe 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Terminal text */
+.terminal {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  animation: flicker 1.5s infinite;
+  z-index: 3;
+  position: relative;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 97%, 100% { opacity: 0; }
+  48%, 50% { opacity: 1; }
 }
 
 @keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.03); opacity: 0.9; }
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.01); opacity: 0.6; }
 }
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+ 
