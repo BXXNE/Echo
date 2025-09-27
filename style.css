@@ -1,19 +1,28 @@
-/* General styles */
 body {
   margin: 0;
   background-color: #0a0a0a;
   font-family: 'Courier New', monospace;
   color: #00ffff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Echo container */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
 .echo-container {
   position: relative;
   max-width: 100%;
   width: 400px;
-  margin: 80px auto;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .echo-face {
@@ -22,7 +31,6 @@ body {
   display: block;
   position: relative;
   z-index: 1;
-
 }
 
 .echo-eyelids {
@@ -30,28 +38,75 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  height: auto;
   z-index: 2;
   opacity: 0;
   animation: blink 6s infinite;
 }
 
-/* Terminal text */
 .terminal {
   margin-top: 20px;
   font-size: 1.2rem;
   animation: flicker 1.5s infinite;
-  z-index: 3;
-  position: relative;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttons a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #00ffff;
+  padding: 8px 16px;
+  transition: background 0.3s ease;
+}
+
+.buttons a:hover {
+  background-color: #00ffff;
+  color: #0a0a0a;
+}
+
+.lore, .community {
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff00ff;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 
 /* Animations */
 @keyframes blink {
   0%, 97%, 100% { opacity: 0; }
   48%, 50% { opacity: 1; }
-}@media (max-width: 500px) {
-  .echo-container {
-    width: 90%;
-  }
 }
 
 @keyframes flicker {
