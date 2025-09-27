@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #ff00cc 100%);
+  color: #f0f0f0;
+  transition: background 0.4s, color 0.4s;
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 5vw;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
