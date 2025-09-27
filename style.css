@@ -10,17 +10,19 @@ body {
 /* Echo container */
 .echo-container {
   position: relative;
+  max-width: 100%;
   width: 400px;
-  margin: 100px auto;
+  margin: 80px auto;
   text-align: center;
 }
 
-/* Echo layers */
 .echo-face {
   width: 100%;
+  height: auto;
   display: block;
   position: relative;
   z-index: 1;
+
 }
 
 .echo-eyelids {
@@ -31,17 +33,6 @@ body {
   z-index: 2;
   opacity: 0;
   animation: blink 6s infinite;
-}
-
-.echo-breath {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-  opacity: 0.4;
-  animation: breathe 6s ease-in-out infinite;
-  pointer-events: none;
 }
 
 /* Terminal text */
@@ -57,15 +48,13 @@ body {
 @keyframes blink {
   0%, 97%, 100% { opacity: 0; }
   48%, 50% { opacity: 1; }
-}
-
-@keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.01); opacity: 0.6; }
+}@media (max-width: 500px) {
+  .echo-container {
+    width: 90%;
+  }
 }
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
- 
