@@ -13,4 +13,17 @@ body {
   background: transparent;
   position: relative;
   overflow: hidden;
+}.echo-eyelids {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  animation: blink 6s infinite;
+}
+
+@keyframes blink {
+  0%, 97%, 100% { opacity: 0; }
+  48%, 50% { opacity: 1; }
 }
